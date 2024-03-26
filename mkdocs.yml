@@ -3,6 +3,7 @@ site_url: https://xkpasswd.net/userdocs
 nav:
   - Home: index.md
   - About: about.md
+
 theme: 
   name: mkdocs
   navigation_depth: 4
