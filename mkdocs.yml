@@ -1,0 +1,6 @@
+site_name: XKPASSWD User Docs
+site_url: https://xkpasswd.net/userdocs
+nav:
+  - Home: index.md
+  - About: about.md
+theme: readthedocs
