@@ -3,4 +3,14 @@ site_url: https://xkpasswd.net/userdocs
 nav:
   - Home: index.md
   - About: about.md
-theme: readthedocs
+theme: 
+  name: mkdocs
+  navigation_depth: 4
+  # nav_style: light
+  shortcuts:
+    help: 191    # ?
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s
+highlightjs: true
+
