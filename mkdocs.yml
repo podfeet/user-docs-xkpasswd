@@ -1,8 +1,11 @@
 site_name: XKPASSWD User Docs
 site_url: https://xkpasswd.net/userdocs
 nav:
-  - Home: index.md
   - About: about.md
+  - Home: index.md
+  - User Guide: user-guide.md  
+  - Help the Project: help-xkpasswd.md
+  - XKCD and XKPASSWD: xkcd-comic.md
 
 theme: 
   name: mkdocs
