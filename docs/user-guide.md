@@ -1,7 +1,5 @@
 # User Guide
 
-### Why is it beta?
-
 When you first go to [xkpasswd.net](https://xkpasswd.net) while the project is in beta, you'll see an explanation of how this tool is being ported from old and busted Perl code to modern web development languages including JavaScript. You'll be invited to push the "Use the Beta" button to get started. 
 
 ![screenshot of xkpasswd.net with an arrow pointing to the Use the Beta button](assets/use-the-beta.png)
