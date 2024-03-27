@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://xkpasswd.net/userdocs/user-guide/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>User Guide - XKPASSWD User Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../docs_dir/style.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">XKPASSWD User Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">User Guide</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../help-xkpasswd/" class="nav-link">Help the Project</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../xkcd-comic/" class="nav-link">XKCD and XKPASSWD</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../help-xkpasswd/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#user-guide" class="nav-link">User Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="3"><a href="#why-is-it-beta" class="nav-link">Why is it beta?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#generate-passwords-with-default-configuration" class="nav-link">Generate Password(s) with Default Configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="3"><a href="#copying-passwords" class="nav-link">Copying passwords</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#presets" class="nav-link">Presets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="user-guide">User Guide</h1>
+<h3 id="why-is-it-beta">Why is it beta?</h3>
+<p>When you first go to <a href="https://xkpasswd.net">xkpasswd.net</a> while the project is in beta, you'll see an explanation of how this tool is being ported from old and busted Perl code to modern web development languages including JavaScript. You'll be invited to push the "Use the Beta" button to get started. </p>
+<p><img alt="screenshot of xkpasswd.net with an arrow pointing to the Use the Beta button" src="../assets/use-the-beta.png" /></p>
+<p>If you want to skip this step, go directly to the beta version at <a href="https://beta.xkpasswd.net">beta.xkpasswd.net</a>.</p>
+<p>The tool is not yet feature-complete, but what you can use is functioning properly. If any feature is not functioning properly when you visit the tool, you'll see it labeled as such.</p>
+<h3 id="generate-passwords-with-default-configuration">Generate Password(s) with Default Configuration</h3>
+<p>If you don't want to fuss around with any kind of settings to generate some passwords, you can simply enter the desired number of passwords and hit the Generate button. By default, this will create 3 highly-complex passwords of the following configuration:</p>
+<ul>
+<li>3 English words of 4-8 characters in length where each word has a leading capital letter</li>
+<li>Each word is separated by a randomly chosen character but is consistent within each password generated</li>
+<li>2 digits of padding are on each end of the character-separated words</li>
+<li>2 random character symbols are added as final padding on either end</li>
+</ul>
+<p>For example: <code>%%85?Fell?Tokyo?Building?74%%</code></p>
+<p><img alt="3 passwords created according to the configuration described above" src="../assets/default-passwords.png" /></p>
+<h3 id="copying-passwords">Copying passwords</h3>
+<p>You have two options to copy the passwords. By default, the passwords are shown in a list format with their own individual copy buttons which will copy directly to your clipboard.</p>
+<p><img alt="List view with a red text box explaining to click on the copy buttons" src="../assets/passwords-list-view.png" /></p>
+<p>The second radio button lets you view the same password list as a block of text that is pre-selected. This view lets you simply use Command/Control-C to copy all of the offered passwords and paste them elsewhere for modification or to let you have a big list of passwords when you're changing several of them at the same time.</p>
+<p><img alt="Preselected block of passwords ready to be copied" src="../assets/passwords-block-of-text.png" /></p>
+<h2 id="presets">Presets</h2>
+<p>For ease of use, XKPASSWD comes with a set of predefined presets. Presets can be used as-is, or, they can be used as a starting point for creating your own configuration. Note that one of the presets is for security questions. You should never give a real answer to a security question because this is the kind of information that's easy to get in a phishing attack. Think about how easy it would be to find out the city in which you went to high school for example. Instead of answering truthfully, use the <code>SECURITYQ</code> preset and store the question and answer in your password manager.</p>
+<p>The following presets are defined:</p>
+<ul>
+<li>
+<p><code>APPLEID</code> - a preset respecting the many prerequisites Apple places on Apple
+ID passwords. Apple's official password policy is located here:
+<a href="http://support.apple.com/kb/ht4232">http://support.apple.com/kb/ht4232</a>. Note that Apple's knowledgebase article
+neglects to mention that passwords can't be longer than 32 characters. This preset
+is also configured to use only characters that are easy to type on the standard
+iOS keyboard, i.e. those appearing on the letters keyboard (<code>ABC</code>) or the
+numbers keyboard <code>.?123</code>, and not those on the harder-to-reach symbols
+keyboard <code>#+=</code>. Below is a sample password generated with this preset:</p>
+<p><code>@60:london:TAUGHT:forget:70@</code></p>
+</li>
+<li>
+<p><code>DEFAULT</code> - the default configuration. Below is a sample password generated
+with this preset:</p>
+<p><code>12:settle:SUCCEED:summer:48</code></p>
+</li>
+<li>
+<p><code>NTLM</code> - a preset for 14-character NTMLv1 (NTLM Version 1) passwords. ONLY USE
+THIS PRESET IF YOU MUST! The 14-character limit does not allow for sufficient
+entropy in the case where the attacker knows the dictionary and config used
+to generate the password, hence this preset will generate low entropy warnings.
+Below is a sample password generated with this preset:</p>
+<p><code>0=mAYAN=sCART@</code></p>
+</li>
+<li>
+<p><code>SECURITYQ</code> - a preset for creating fake answers to security questions. It
+generates long nonsense sentences ending in <code>.</code>, <code>!</code> or <code>?</code>, for example:</p>
+<p><code>Wales outside full month minutes gentle?</code></p>
+</li>
+<li>
+<p><code>WEB16</code> - a preset for websites that don't allow more than 16-character long
+passwords. Because 16 characters is not very long, a large set of
+symbols are chosen from for the padding and separator. Below is a sample
+password generated with this preset:</p>
+<p><code>:baby.ohio.DEAR:</code></p>
+</li>
+<li>
+<p><code>WEB32</code> - a preset for websites that don't allow more than 32 character long
+passwords. Below is a sample password generated with this preset:</p>
+<p><code>+93-took-CASE-money-AHEAD-31+</code></p>
+</li>
+<li>
+<p><code>WIFI</code> - a preset for generating 63 character long WPA2 keys (most routers
+allow 64 characters, but some only 63, hence the odd length). Below is a sample
+password generated with this preset:</p>
+<p><code>2736_ITSELF_PARTIAL_QUICKLY_SCOTLAND_wild_people_7441!!!!!!!!!!</code></p>
+</li>
+<li>
+<p><code>XKCD</code> - a preset inspired by the original <a href="http://xkcd.com/936/">XKCD comic</a>, but with some alterations to provide sufficient
+entropy to avoid low entropy warnings. Below is a sample password generated
+with this preset:</p>
+<p><code>KING-madrid-exercise-BELGIUM</code></p>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
