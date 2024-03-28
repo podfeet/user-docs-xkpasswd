@@ -13,9 +13,3 @@ XKPASSWD can help you create passwords for very specific situations, such as cre
 #### Is XKPASSWD a Password Manager?
 
 NO, XKPASSWD is _not_ a password manager. It doesn't store any passwords you create but rather allows you to copy them and add them to your dedicated password manager. You _are_ using a password manager, right?
-
-[User Guide to XKPASSWD](user-guide.md)
-
-[What does XKPASSWD have to do with the XKCD comic?](xkcd-comic.md)
-
-[How can I help with XKPASSWD?](help-xkpasswd.md)
