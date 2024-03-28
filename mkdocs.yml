@@ -3,9 +3,11 @@ site_url: https://xkpasswd.net/userdocs
 nav:
   - About: about.md
   - Home: index.md
-  - User Guide: user-guide.md  
+  - User Guide: user-guide.md
+  - Statistics & Entropy: statistics-entropy.md 
   - Help the Project: help-xkpasswd.md
   - XKCD and XKPASSWD: xkcd-comic.md
+  - Thar be Dragons: the-maths.md
 
 theme: 
   name: readthedocs
@@ -16,7 +18,6 @@ theme:
     next: 78     # n
     previous: 80 # p
     search: 83   # s
-
 
 extra_css:
   - docs_dir/style.css
