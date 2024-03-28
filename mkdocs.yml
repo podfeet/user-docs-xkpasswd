@@ -10,12 +10,13 @@ nav:
 theme: 
   name: readthedocs
   navigation_depth: 4
-  # nav_style: light
+  nav_style: light
   shortcuts:
     help: 191    # ?
     next: 78     # n
     previous: 80 # p
     search: 83   # s
+
 
 extra_css:
   - docs_dir/style.css
