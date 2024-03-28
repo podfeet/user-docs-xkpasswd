@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://xkpasswd.net/userdocs/the-maths/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Thar be Dragons - XKPASSWD User Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../docs_dir/style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Thar be Dragons";
+        var mkdocs_page_input_path = "the-maths.md";
+        var mkdocs_page_url = "/userdocs/the-maths/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> XKPASSWD User Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user-guide/">User Guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../statistics-entropy.md">Statistics & Entropy</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../help-xkpasswd/">Help the Project</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../xkcd-comic/">XKCD and XKPASSWD</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Thar be Dragons</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-maths">The Maths</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#maths-primer">Maths Primer</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-entropy-of-xkpasswd-passwords">The Entropy of XKPASSWD Passwords</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">XKPASSWD User Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Thar be Dragons</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="thar-be-dragons">Thar Be Dragons!</h1>
+<h3 id="the-maths">The Maths</h3>
+<p>Before examining the password strength of passwords generated with this module we need to lay out the relatively simple maths underlying it all. </p>
+<h3 id="maths-primer">Maths Primer</h3>
+<p>A coin could be used as a very simple password generator. Each character in the password would be the result of a single coin toss. If the coin lands heads up, we add a 'H' to our password, if it lands tails up, we add a 'T'.</p>
+<p>If you made a one-letter password in this way there would only be two possibilities, 'H', or 'T', or two permutations. If you made a two-letter password in this way there would be four possible combinations, or permutations, 'HH', 'HT', 'TH', and 'TT'. If you made a three-character password in this way there would be 16 permutations, a five character one would have 32 permutations, and so forth. </p>
+<p>So, for a coin toss, which has two possible values for each character, the formula for the number of permutations 'P' for a given length of password 'L' is:</p>
+<pre><code>P = 2^L
+</code></pre>
+<p>Or, two to the power of the length of the password.</p>
+<p>If we now swapped our coin for a dice, we would go from two possible values per letter, to six possible values per letter. For one dice roll there would be six permutations, for two there would be 36, for three there would be 108 and so on.</p>
+<p>This means that for a dice, the number of permutations can be calculated with the formula:</p>
+<pre><code>P = 6^L
+</code></pre>
+<p>When talking about passwords, the set of possible symbols used for each character in the password is referred to as the password's <code>alphabet</code>. So, for the coin toss the alphabet was just <code>H</code> and <code>T</code>, and for the dice, it was <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, and <code>6</code>. The actual characters used in the alphabet make no difference to the strength of the password, all that matters is the size of the alphabet, which we'll call <code>A</code>.</p>
+<p>As you can probably infer from the two examples above, the formula for the number of possible permutations <code>P</code> for a password of length <code>L</code> created from an alphabet of size <code>A</code> is:</p>
+<pre><code>P = A^L
+</code></pre>
+<p>In the real world, our passwords are generally made up of a mix of letters, digits, and symbols. If we use mixed case that gives us 52 letters alone, then add in the ten digits from <code>O</code> to <code>9</code> and we're already up to 62 possible characters before we even start on the array of symbols and punctuation characters on our keyboards. It's generally accepted that if you include symbols and punctuation, there are 95 characters available for use in randomly generated passwords. Hence, in the real world, the value for <code>A</code> is assumed to be 95. When you start raising a number as big as 95 to even low powers the number of permutations quickly rises.</p>
+<p>A two-character password with an alphabet of 95 has 9025 permutations, increasing the length to three characters brings that up to 857,375, and so on. These numbers very quickly become too big to handle. For just an 8-character password we are talking about 6,634, 204, 312,890,625 permutations, which is a number so big most people couldn't say it (what do you call something a thousand times bigger than a trillion?)</p>
+<p>Because the numbers get so astronomically big so quickly, computer scientists use bits of entropy to measure password strength rather than the number of permutations. The formula to turn permutations into bits of entropy <code>E</code> is very simple:</p>
+<pre><code>E = Log(2)P
+</code></pre>
+<p>In other words, the entropy is the log to base two of the permutations. For our eight-character example that equates to about 52 bits.</p>
+<p>There are two approaches to increasing the number of permutations, and hence the entropy, you can choose more characters, or, you can make the alphabet you are choosing from bigger.</p>
+<h3 id="the-entropy-of-xkpasswd-passwords">The Entropy of XKPASSWD Passwords</h3>
+<p>Exactly how much entropy does a password need? That's the subject of much debate, and the answer ultimately depends on the value of the assets being protected by the password.</p>
+<p>Two common recommendations you hear are 8 characters containing a mix of upper and lower case letters, digits, and symbols, or 12 characters with the same composition. These evaluate to approximately 52 bits of entropy and 78 bits of entropy respectively.</p>
+<p>When evaluating the entropy of passwords generated by this module, it has to be done from two points of view for the answer to be meaningful. Firstly, a best-case scenario - the attacker has absolutely no knowledge of how the password was generated, and hence must mount a brute-force attack. Then, secondly from the point of view of an attacker with full knowledge of how the password was generated. Not just the knowledge that this module was used, but a copy of the dictionary file used, and, a copy of the configuration settings used.</p>
+<p>For the purpose of this documentation, the entropy in the first scenario, the brute force attack, will be referred to as the blind entropy, and the entropy in the second scenario the seen entropy.</p>
+<p>The blind entropy is solely determined by the configuration settings, the seen entropy depends on both the settings and the dictionary file used.</p>
+<p>Calculating the bind entropy <code>Eb</code> is quite straightforward, we just need to know the size of the alphabet resulting from the configuration <code>A</code>, and the minimum length of passwords generated with the configuration <code>L</code>, and plug those values into this formula:</p>
+<pre><code>Eb = Log(2)(A^L)
+</code></pre>
+<p>Calculating <code>A</code> simply involves determining whether or not the configuration results in a mix of letter cases (26 or 52 characters), the inclusion of at least one symbol (if any one is present, assume the industry standard of a 33-character search space), and the inclusion of at least one digit (10 characters). This will result in a value between 26 and 95.</p>
+<p>Calculating <code>L</code> is also straightforward. The one minor complication is that some configurations result in a variable-length password. In this case, assume the shortest possible length the configuration could produce.</p>
+<p>The example password from the <a href="../about/#philosophy">Philosophy section</a> (<code>!15.play-MAJOR.fresh.FLAT.23!</code>) was generated using the preset <code>WEB32</code>. This preset uses four words of between four and five letters long, with the case of each word randomly set to all lower or all upper as the basis for the password, it then chooses two pairs of random digits as extra words to go front and back, before separating each word with a copy of a randomly chosen symbol, and padding the front and back of the password with a copy of a different randomly chosen symbol. This results in passwords that contain a mix of cases, digits, and symbols, and are between 27 and 31 characters long. If we add these values into the formula we find that the blind entropy for passwords created with this preset is:</p>
+<pre><code>Eb = Log(2)(95^27) = 163 bits
+</code></pre>
+<p>This is spectacularly secure! And, this is the most likely kind of attack for a password to face. However, to have confidence in the password we must also now calculate the entropy when the attacker knows everything about how the password was generated.</p>
+<p>We will calculate the entropy resulting from the same <code>WEB32</code> config being used to generate a password using the sample library file that ships with the XKPASSWD.</p>
+<p>The number of permutations the attacker needs to check is purely the product of possible results for each random choice made during the assembly of the password.</p>
+<p>Let's start with the words that will form the core of the password. The configuration chooses four words of between four and five letters long from the dictionary, and then randomises their case, effectively making it a choice from twice as many words (each word in each case).</p>
+<p>The sample dictionary file contains 698 words of the configured length, which doubles to 1396. Choosing four words from that very large alphabet gives a starting point of <code>'1396^4</code>, or 3,797,883,801,856 permutations.</p>
+<p>Next we need to calculate the permutations for the separator character. The configuration specifies just nine permitted characters, and we choose just one, so that equates to 9 permutations.</p>
+<p>Similarly, the padding character on the end is chosen from 13 permitted symbols giving 13 more permutations.</p>
+<p>Finally, there are four randomly chosen digits, giving <code>10^4</code>, or 10,000 permutations.</p>
+<p>The total number of permutations is the product of all these permutations:</p>
+<pre><code>Pseen = 3,797,883,801,856 * 9 * 13 * 10,000 = 2.77x10^17
+</code></pre>
+<p>Finally, we convert this to entropy by taking the base 2 log:</p>
+<pre><code>Eseen = Log(2)2.77x10^17 = ~57bits
+</code></pre>
+<p>What this means is that most probably, passwords generated with this preset using the sample dictionary file are spectacularly more secure than even 12 randomly chosen characters, and, that in the very unlikely event that an attacker knows absolutely everything about how the password was generated, it is still significantly more secure than 8 randomly chosen characters.</p>
+<p>Because the exact strength of the passwords produced by this module depends on the configuration and dictionary file used, the constructor does the above math when creating an XPasswd object, and throws a warning if either the blind entropy falls below 78bits, or the seen entropy falls below 52 bits.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../xkcd-comic/" class="btn btn-neutral float-left" title="XKCD and XKPASSWD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../xkcd-comic/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
