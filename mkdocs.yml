@@ -1,5 +1,5 @@
 site_name: XKPASSWD User Docs
-site_url: https://xkpasswd.net/userdocs
+site_url: https://podfeet.github.io/user-docs-xkpasswd/user-guide
 nav:
   - About: about.md
   - Home: index.md
